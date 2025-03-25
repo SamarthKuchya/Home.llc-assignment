@@ -2,6 +2,6 @@ streamlit
 audio-recorder-streamlit
 SpeechRecognition
 google-generativeai
-pyttsx3
+gtts
 python-dotenv
 pyaudio

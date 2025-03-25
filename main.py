@@ -2,9 +2,10 @@ import streamlit as st
 from audio_recorder_streamlit import audio_recorder
 import speech_recognition as sr
 import google.generativeai as genai
-import pyttsx3
+# import pyttsx3
 import io
 from dotenv import load_dotenv
+from gtts import gTTS
 import os
 
 load_dotenv()
@@ -58,9 +59,8 @@ def transcribe_audio(audio_bytes):
         return "Could not request results; check your internet connection."
 
 def text_to_speech(text):
-    engine = pyttsx3.init()
-    engine.save_to_file(text, 'response.mp3')
-    engine.runAndWait()
+    tts = gTTS(text=text, lang='en')
+    tts.save('response.mp3')
     with open('response.mp3', 'rb') as audio_file:
         audio_bytes = audio_file.read()
     return audio_bytes
