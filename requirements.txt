@@ -4,5 +4,4 @@ SpeechRecognition
 google-generativeai
 pyttsx3
 python-dotenv
-portaudio19-dev
 pyaudio
